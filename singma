@@ -1,0 +1,32 @@
+# 1. Khởi tạo cửa sổ màn hình chính
+root = tk.Tk()
+root.title("Cửa sổ đầu tiên của tôi")
+root.geometry("400x300")  # Chiều rộng x Chiều cao (pixel)
+
+
+# Hàm xử lý khi bấm nút
+def on_button_click():
+    label_status.config(text="Bạn đã bấm nút thành công!")
+
+
+# 2. Tạo nhãn (Text label)
+label_title = tk.Label(root, text="Chủ đề: Tạo giao diện Python", font=("Arial", 14))
+label_title.pack(pady=20)
+
+label_status = tk.Label(root, text="Trạng thái: Chờ...", font=("Arial", 10), fg="blue")
+label_status.pack(pady=10)
+
+# 3. Tạo nút bấm (Button)
+btn = tk.Button(
+    root,
+    text="Bấm vào đây",
+    command=on_button_click,
+    bg="#4CAF50",
+    fg="white",
+    padx=10,
+    pady=5,
+)
+btn.pack(pady=10)
+
+# 4. Chạy vòng lặp giao diện
+root.mainloop()
